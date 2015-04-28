@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Css3|Html5</title>
+<script src="./include/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script>
+  function Anim(x,b){
+		b.removeClass(x + ' animated').addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+				b.removeClass(x + ' animated');
+		});
+  }
+
+  $('document').ready(function(){
+        $('dl dd').mouseenter(function(){
+                b = $(this);
+                Anim('swing',b);
+        });
+        $('tr').mouseenter(function(){
+                b = $(this);
+                Anim('pulse',b);
+        });
+  });
+</script>
+<link href="./include/animate.css" rel="stylesheet" type="text/css">
+<link href="./include/style.css" rel="stylesheet" type="text/css">
+
+<style type="text/css"></style></head>
+<body>
+<div id="Wrap">
+  <div id="naver">
+    <dl>
+        <dt class="fr"><a href="http://www.shurong2199.com">GitHub</a></dt>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+		<dd><a href="http://www.shurong2199.com">GitHub</a></dd>
+	</dl>
+  </div>
+</body>
+</html>
