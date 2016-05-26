@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        /*
+        圣杯布局：
+        要求 -- 三列布局，中间内容所在节点前置并宽度自适应，两边内容定宽
+        好处 -- 重要的东西放在文档流前面可以优先渲染
+        实现 -- 用到浮动、负边距、相对定位，不添加额外标签
+        */
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        header, footer {
+            width: 100%;
+            background: #666;
+            height: 50px;
+            clear: both;
+        }
+
+        .content {   /* 3. 中间部分左右两侧的内容被浮动元素遮挡，需要设置父容器相应宽度的左右 padding 值，将内容向中间聚拢 */
+            padding-left: 150px;
+            padding-right: 190px;
+        }
+
+        .main {  /* 1. 中间部分宽度适应浏览器，所以要设 width 为 100% （此时，没有宽度留给左层和右层排列在同一行）*/
+            float: left;
+            width: 100%;
+            background: #D6D6D6;
+        }
+
+        .left {  /* 2. 设负 margin-left <= 自身宽度，浮动到上一行（在本行负出父容器最左没位置显示，只能浮动到上一行最右开始向左显示）*/
+            width: 150px;
+            float: left;
+            margin-left: -100%;  /* margin-left 设为 -100% -- 浮动在上一行父容器最左侧 */
+            position: relative;  /* 4. 父容器设置左右 padding 后，左右栏也会向中间聚拢，此时设置相对定位 relative 恢复各自在该行的原来位置 */
+            left: -150px;
+            background: #E79F6D;
+        }
+
+        .right {
+            width: 190px;
+            float: left;
+            margin-left: -190px; /* margin-left 设为负的自身宽度 -- 浮动在上一行父容器右左侧 */
+            position: relative;
+            right: -190px;
+            background: #77BBDD;
+        }
+
+        /* */
+    </style>
+</head>
+<body>
+<header>Header</header>
+<div class="content">
+    <div class="main">
+        <p>Main</p>
+        <p>Main</p>
+        <p>Main</p>
+        <p>Main</p>
+        <p>Main</p>
+    </div>
+    <div class="left">
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+    </div>
+    <div class="right">
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+    </div>
+</div>
+<footer>Footer</footer>
+</body>
+</html>

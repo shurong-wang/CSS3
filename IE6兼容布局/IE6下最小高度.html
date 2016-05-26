@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>设置最小高度</title>
+<style type="text/css">
+	.left,.content{
+
+		/*设置最小高度,IE6无效*/
+		min-height:500px;	
+		overflow:hidden;
+		zoom:1;
+	
+		/*使IE6最小高度生效*/
+		height:100%;
+		_height:500px;
+		_overflow-y:visible;
+
+		margin-left:10px;
+		border:1px solid #ccc;
+		float:left;
+	}
+	.left{
+		width:200px;
+	}
+	.content{
+		width:700px;
+	}
+</style>
+</head>
+<body>
+	<div class="left">
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+		<p>Hello World!</p>
+	</div>
+	<div class="content">
+		<p>DIV+CSS最小高度（兼容IE6\IE7\FF）(转载)
+折腾了一上午，就是搞不定这个最小高度 min-height:的问题，因为min-height:只在IE7\FF中起作用。至于这个IE6死活就是不认。而我这个页面又必需得用这个最小高度来定。
+
+页面是二栏的左右分，左栏算是导航菜单固定不变，长约1160PX，右边是产品的详细信息且是动态的，可长可短。
+
+左右栏中间是一条1PX灰色的分隔线，就是这根分隔线倒底是定在左栏的右边框上，还是定在右栏的左边框上，问题有点头痛。因为左边定死1160PX，右边是自由伸展。如果定在左栏上，右栏动态内容长度大于1160时这根线是不会跟着做延伸的。那好，那就定在右栏上，但如果右栏的动态内容小于左栏1160时，这根线也是不会自动伸止1160处。麻烦了，真是左右为难。
+
+现在只有最小高度可以解决这个问题了，把右栏定一个最小高度min-height:1160px;这样左右就一样了。即使右栏动态内容不能达到1160的长度，有了这个最小高度，右栏将始终都是以1160这个最小高度来显示，至于动态内容大于1160时，也是可以做自动延伸的。问题到了这一步，也能用这方法解决了。
+
+但头痛的是IE6就是不认min-height:，这样定好后在IE7\FF里测试是没有任何问题的。但我们现在要解决IE6的。好在IE6与IE7不同，它可以将一个模块定死高度，当模板里内容大于这个高度时，是会自动撑开这个模块，IE7如果定死高度，内容大于高度时是会被遮住，就是不显示。</p>
+	</div>
+</body>
+</html>
