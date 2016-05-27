@@ -2,30 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>文字垂直居中</title>
+    <title>等高布局</title>
     <style>
-        .list_row {
-            display: table-row;
+
+        /*
+        原理-利用绝对定位元素无宽高度特性：
+        1. 伪造一个高度足够高的绝对定位层
+        2. 同时设置父标签溢出隐藏，子元素溢出的高度即不会显示
+        */
+        .out_box {
+            width: 70%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
             overflow: hidden;
+            position: relative; /* 兼容IE6/7 */
         }
 
-        .list_cell {
-            display: table-cell;
-            width: 30%;
-            margin-bottom: -100px;
-            padding: 1.6%;
-            *padding-bottom: 110px;
-            background-color: #f5f5f5;
-            *float: left;
-            border : 1px solid #999;
+        /* 侧栏position为relative */
+        .left_box {
+            width: 25%;
+            float: left;
+            position: relative;
         }
+
+        /* 高度999em的绝对定位层位于侧栏容器内 */
+        .equal_height {
+            width: 100%;
+            height: 999em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* 与absolute绝对定位层为兄弟关系，position为relative，z-index值1或其他 */
+        .left_content {
+            padding: 1em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .right_box {
+            width: 74.6%;
+            float: right;
+        }
+
     </style>
 </head>
 <body>
-<div class="list_row">
-    <div class="list_cell">你一定也有过这种感觉的。...罗兰《寂寞的感觉》</div>
-    <div class="list_cell ">作为一个被基阿异捅过...水，四积阴功五读书。作为一个被基阿异捅过...水，四积阴功五读书。</div>
-    <div class="list_cell">奔波了一...永远幸福快乐！</div>
+<div class="out_box">
+    <div class="left_box">
+        <div class="equal_height" style="background: #fff;"></div>
+        <div class="left_content">
+            <p>HTML5</p>
+            <p>HTML5</p>
+            <p>HTML5</p>
+            <p>HTML5</p>
+            <p>HTML5</p>
+        </div>
+    </div>
+    <div class="right_box">
+        <div class="right_content">
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+            <p>CSS3</p>
+        </div>
+    </div>
 </div>
 </body>
 </html>

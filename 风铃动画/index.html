@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Css3|Html5</title>
+    <script src="style/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script>
+        function Anim(x, b) {
+            b.removeClass(x + ' animated').addClass(x + ' animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+                b.removeClass(x + ' animated');
+            });
+        }
+
+        $('document').ready(function () {
+            $('li').mouseenter(function () {
+                b = $(this);
+                Anim('swing', b);
+            });
+        });
+    </script>
+    <link href="style/animate.css" rel="stylesheet" type="text/css">
+    <link href="style/style.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css"></style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="###">课程设置</a></li>
+            <li><a href="###">就业信息</a></li>
+            <li><a href="###">业界新闻</a></li>
+            <li><a href="###">企业合作</a></li>
+            <li><a href="###">在线报名</a></li>
+            <li><a href="###">课程视频</a></li>
+            <li><a href="###">资料下载</a></li>
+        </ul>
+    </nav>
+</header>
+</body>
+</html>

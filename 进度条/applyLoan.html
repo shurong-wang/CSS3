@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>手机信用卡申请</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="Shortcut Icon" href="./apply/images/favicon.ico" />
+<link rel="Bookmark" href="./apply/images/nbcb.ico" />
+<link type="text/css" href="./apply/css/apply.css" rel="stylesheet" />
+<script type="text/javascript" src="./apply/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="./apply/js/publicVerify.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav_in">
+        <!-- 
+		    <section>
+	    		<span>
+	    			<label>
+				    	<font style="display:inline-block;height:21px;line-height:21px;font-size:16px;letter-spacing:2px;font-weight:bold;">宁波银行</font><br/>
+				    	<font style="display:inline-block;height:10px;line-height:10px;font-size:8px;">BANK&nbsp;&nbsp;OF&nbsp;NINGBO&nbsp;&nbsp;</font>
+			    	</label>
+		    	</span>
+		    </section>
+		 -->
+		    <section>
+		    	<span><!-- LOGO --></span>
+		    </section>
+        </div>
+    </header>
+    
+	<form name="applyForm" method="post" action="###" id="applyForm">
+		<div style="margin:15px 1px 10px 0px; font-size:14px; text-align:center; font-weight:bold;">1.请填写您的联系方式</div>
+		<section class="itemSection">
+		    <div class="itemDiv inputDiv">
+		        <span><i>* </i>姓名：</span>
+		        <div> <input name="userName" type="text" id="userName" maxlength="12" /> </div>
+		    </div>
+		    <div class="itemDiv radioDiv">
+		        <span><i>* </i>性别：</span>
+		        <div> 
+					<input name="sex" type="radio" id="Mr" value="1" /> <label>先生</label> &nbsp;&nbsp;
+					<input name="sex" type="radio" id="Ms" value="2" /> <label>女士</label> 
+		        </div>
+		    </div>
+		    <div class="itemDiv inputDiv">
+		        <span><i>* </i>手机号：</span>
+		        <div> <input name="mobile" type="text" id="mobile" maxlength="11" pattern="[0-9]*" /> </div>
+		        <div style="padding-right:5px;-webkit-box-flex: 0; width:90px;" id="DivSMSBtn">
+		        	<input type="button" id="btnGetSMSCode" value="获取验证码" onclick="getSMSCode()" />
+		        </div>
+		    </div>
+		    <div id="DivSMSCode" class="itemDiv inputDiv">
+		        <span><i>* </i>短信验证码：</span>
+		        <div> <input name="SMSCode" type="text" id="SMSCode" maxlength="6" pattern="[0-9]*" /> </div>
+		    </div>
+		    <div class="itemDiv selectDiv">
+		        <span><i>* </i>所在城市：<!-- 省/直辖市 --></span>
+				<div>
+					<select id="Prov" style="color: #999;">
+						<option value="">请选择省/直辖市</option>
+					</select>
+				</div>
+			</div>
+		    <div class="itemDiv selectDiv">
+		        <span style="color:#FFF;"><i style="color:#FFF;">* </i>所在城市：<!-- 市 --></span>
+		        <div>
+		        	<select id="City" style="color:#999;">
+		        		<option value="">请选择市</option>
+		        	</select>
+		        </div>
+		    </div>
+		    <div class="itemDiv selectDiv">
+		        <span style="color:#FFF;"><i style="color:#FFF;">* </i>所在城市：<!-- 区/县 --></span>
+		        <div>
+			        <select id="Dist" style="color:#999;">
+			        	<option value="">请选择区/县</option>
+			        </select>
+		        </div>
+		    </div>
+		    <div class="itemDiv inputDiv" id="noServDiv" style="display:none;">
+		        <div class="ajaxMsg"><em>!</em>抱歉，该区域未开通上门办卡服务，请前往我行网点尝试办理。</div>
+		    </div>
+		    <div class="itemDiv selectDiv">
+		        <span><i>* </i>工作编制：</span>
+		        <div>
+		            <select name="staffing" id="staffing" style="color:#999; background-color:Transparent;">
+						<option value="0">请选择工作编制</option>
+						<option value="1">公务员编制</option>
+						<option value="2">事业编制</option>
+						<option value="3">企业编制</option>
+					</select>
+		        </div>
+		    </div>
+		    <div class="itemDiv radioDiv">
+		        <span><i>* </i>抵押物：</span>
+		        <div> 
+					<input name="pawn" type="radio" id="havePawn" value="1" /> <label>有</label> &nbsp;&nbsp;
+					<input name="pawn" type="radio" id="nonePawn" value="2" /> <label>无</label> 
+		        </div>
+		    </div>
+		</section>
+		<section class="agreement">
+		   <div>您的信息将只作为贷款审核使用，不会以任何形式泄漏给其他人或机构。</div>
+		   <div class="sel" id="isAgree"></div>
+		</section>
+		
+		<!-- 显示验证错误信息 -->
+		<div class="ajaxMsg" id="errMsgDiv" style="display:none;"><em>!</em></div>
+		
+		<section class="submitSection" style="margin-top:10px;">
+		    <input type="hidden" name="hiddenProv" id="hiddenProv" />
+		    <input type="hidden" name="hiddenCity"  id="hiddenCity" />
+		    <input type="hidden" name="hiddenDist"  id="hiddenDist" />
+		    <input type="hidden" name="isTransact" id="isTransact" /> <!-- 是否开通服务  -->
+		    <input type="hidden" id="temp_transact" value="" />
+		    <input type="hidden" id="haveCard" value="0" /> <!-- 是否已经开卡  -->
+		    <input type="hidden" id="frimAddr" value="" /> <!-- 省市区完整地址  -->
+		    
+		    <div class="btnSubmitDiv">
+		        <div>
+		        	<!-- 提交信用卡申请  -->
+		        	<input type="button" value="立即提交" id="btnSubmit" style="cursor:pointer;" />
+		        </div>
+		    </div>
+		    
+		</section>
+	</form>
+ 
+    <footer>
+        <div>
+            <span style="font-family:Times New Roman;">&#169;</span> 
+                                 宁波银行股份有限公司<br/>
+           	 浙ICP备&nbsp;11055414号
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="./apply/js/addrWidget.js"></script>
+	<script type="text/javascript" src="./apply/js/applyLoan.js"></script>
+
+</body>
+</html>

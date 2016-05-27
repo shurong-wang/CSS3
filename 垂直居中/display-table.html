@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>垂直居中</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            display: table;
+            position: relative;
+            overflow: hidden;
+        }
+
+        span {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+            *position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        img {
+            *position: relative;
+            vertical-align: top; /* 消除图片与容器底部间隙 */
+            left: -50%;
+            top: -50%;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <span><img src="V.jpg"/></span>
+</div>
+</body>
+</html>

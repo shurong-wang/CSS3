@@ -1,0 +1,60 @@
+﻿body{ background-color:#DCDCDC; font-family:Arial; -webkit-text-size-adjust: none;}
+*{ padding:0; margin:0;}
+header,section{ display:block;}
+.clear{ clear:both; font-size:0; line-height:0;}
+
+header { line-height: 43px; height: 43px; border-bottom: solid 1px #3C0000; border-top: solid 1px #767877; width: 100%; background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#C52C2F), color-stop(0.5, #B31D1F), color-stop(0.51, #A10B0C), to(#A10B0C)); }
+header .nav_in { padding: 7px 0 0 6px; height: 30px; line-height: 30px; position: relative; display: -webkit-box; }
+header section:first-child{ position:absolute; left:6px; top:7px;}
+header section:first-child .nav_back { font-size: 12px; border: 0; overflow: hidden; }
+header section:first-child .nav_back span { float: left; display: inline-block; width: 15px; height: 30px; overflow: hidden; }
+header section:first-child .nav_back span em { display: inline-block; -webkit-box-shadow: inset 1px 1px 1px #8B0000; -webkit-transform: rotate(-54deg) skew(-16deg); position: relative; left: 12px; top: -23px; text-align: left; width: 76px; height: 76px; border: 1px solid black; border-color: #640000; background-color: Transparent; -webkit-border-radius: 3px; }
+header section:first-child .nav_back a.prepage { float: left; font-size: 12px; font-weight: bold; -webkit-box-shadow: inset -1px 1px 1px #8B0000; text-decoration: none; display: inline-block; width: 49px; height: 28px; line-height: 28px; border: 1px solid black; border-left: 0; text-align: center; -webkit-border-radius: 0 4px 4px 0; border-color: #640000; background-color: Transparent; color: #F6EDF0; }
+header section:nth-child(2){ text-align: center; -webkit-box-flex: 1; }
+header section:nth-child(2) span { display: block; height: 30px; line-height: 30px; padding: 0 10px; font-size: 18px; font-weight: bold; color: #FFFEFF; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+header section:nth-child(3){ width:40px; position:absolute; top:7px; right:0;}
+
+.itemSection { margin: 7px 9px 8px; border: solid 1px #ABABAB; -webkit-border-radius: 8px; -webkit-box-shadow: inset 0px 1px 1px #DEDEDE; background-color:#FFF; min-height: 41px; font-size:14px; }
+.itemSection .itemDiv { line-height: 40px; border-top: solid 1px #ABABAB; }
+.itemSection div.itemDiv:first-child { border-top-width: 0; padding-top:1px; }
+.itemSection .itemDiv span { font-weight: bold; padding-left: 12px; }
+.itemSection .itemDiv span i{font-style:normal; color:#E70000;}
+.itemSection .itemDiv div span{ font-weight:normal; color:#38528B;}
+
+.itemSection .selectDiv, .itemSection .inputDiv, .itemSection .radioDiv { display: -webkit-box; width: 100%; }
+
+.itemSection .selectDiv div { -webkit-box-flex: 1; position: relative; width: 100%; }
+.itemSection .selectDiv div:after { content: ""; top: 15px; right: 12px; position: absolute; display: inline-block; width: 6px; height: 6px; -webkit-transform: rotate(225deg); background: transparent; border-top: 2px solid #BD2325; border-left: 2px solid #BD2325; }
+.itemSection .selectDiv select { width: 100%; height: 39px; color: #38528B; padding-left: 5px; -webkit-appearance: none; padding-right: 26px; border: 0; text-align: right; font-size:15px; }
+.itemSection .selectDiv em{ display:block; width:100%; font-style:normal; text-align:right; margin-right:26px;}
+
+.itemSection .inputDiv div { -webkit-box-flex: 1; position: relative; width: 100%; padding-right: 21px;}
+.itemSection .inputDiv input{ border: 0; padding-left:9px; height: 39px;color: #38528B; text-align: right; width: 100%; vertical-align:middle; font-size:15px;}
+.itemSection .inputDiv input[type="button"]{ text-align:center; height:31px; margin-top:4px; border:solid 1px #CCC;  -webkit-border-radius: 5px; padding-left:0;}
+.itemSection .inputDiv input:focus{ text-align:left; }
+
+.itemSection .radioDiv div { display:table-cell; width: 100%; padding-right: 21px;}
+.itemSection .radioDiv input{ height: 38px; vertical-align:middle; margin:0px; }
+.itemSection .radioDiv label { vertical-align:middle;}
+
+.ajaxMsg{ color:#E7333F; text-align:center; width:100%; font-weight:bold; margin:10px 0 10px; line-height:24px; font-size:14px;}
+.ajaxMsg em{ width:20px; height:20px; font-style:normal; font-weight:bold; color:#FFF; line-height:20px; text-align:center; font-size:18px; display:inline-block; margin-right:5px; -webkit-box-shadow: 0 1px 1px #818181; -webkit-border-radius: 13px; border:solid 2px #FFF; background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#EBBDC0), color-stop(0.05, #D25D66), to(#BE1421));}
+
+.btnSubmitDiv { margin: 14px 10px; font-size: 16px; }
+.btnSubmitDiv div { -webkit-box-flex: 1; text-align: left; }
+.btnSubmitDiv div input { min-width: 60px; line-height: 30px; font-size:16px; font-weight:bold; height: 40px; width: 100%; color: #FFF; background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#F8CACD), color-stop(0.05, #F07E86), color-stop(0.50, #E7333F), color-stop(0.51, #E20111), to(#EB1314)); -webkit-border-radius: 10px; border-style: solid; border-width: 1px; -webkit-box-shadow: 1px 1px 1px rgba(000,000,000,0.2); }
+.btnSubmitDiv div .disabled_style{background: -webkit-gradient(linear, 50% 0%, 50% 100%, from(#FBFBFB), color-stop(0.05, #F7F7F7), color-stop(0.50, #D2D3D5), color-stop(0.51, #C0C1C5), to(#C0C1C5));}
+
+.submitSection{ overflow:hidden; border-top:solid 1px #F9F9F9;-webkit-box-shadow: 0 -1px #C2C2C2; }
+
+.conlock{ background:transparent url(../images/checkbox.png) no-repeat scroll 0 -1px;margin:7px auto 0; padding-left:20px; width:280px; line-height:20px; font-size:14px; text-align:center;}
+
+footer div{text-align:center; color:#646464; line-height:20px; margin-top:14px; margin-bottom:5px; font-size:14px;}
+
+.agreement{ font-size:14px; margin:0 9px 8px; color:#000; position:relative;}
+.agreement div:nth-child(1){ margin-left:28px;}
+.agreement div:nth-child(2){ width:20px; margin:0 15px 15px 0; height:20px; position:absolute; left:0; top:0; background:transparent url(../images/checkbox.png) no-repeat scroll 0 -54px;cursor:pointer;}
+.agreement div.sel{ background-position:0 -99px;}
+.agreement a{ color:#000;}
+
+

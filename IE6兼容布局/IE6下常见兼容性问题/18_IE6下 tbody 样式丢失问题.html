@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>IE6下 tbody 样式丢失问题</title>
+    <style>
+        table {
+            width: 200px;
+            border-collapse: collapse;
+            background: Red;
+        }
+
+        tbody {
+            background: yellow;
+        }
+
+        tr {
+            background: url('data:image/png;base64,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') no-repeat;
+        }
+
+        td {
+            padding-left: 30px;
+            height: 30px;
+        }
+
+        /*
+            IE6下同时给tbody及其子元素加样式，tbody的样式会丢失（thead同理）
+            解决办法:
+                不给 thead、tbody 加样式
+        */
+    </style>
+</head>
+<body>
+<table>
+    <tbody>
+    <tr>
+        <td>表格</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

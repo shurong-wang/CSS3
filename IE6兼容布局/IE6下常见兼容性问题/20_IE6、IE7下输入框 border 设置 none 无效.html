@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>IE6、IE7下输入框 border 设置 none 无效</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 32px;
+            border: 1px solid red;
+            background: yellow;
+        }
+
+        input {
+            width: 100px;
+            height: 32px;
+            border: none;
+            margin: 0;
+            padding: 0;
+            float: left;
+            background: #fff;
+        }
+
+        /*
+            在IE6，7下输入类型的表单控件加border:none无效
+
+            解决办法: 重置input的背景
+        */
+    </style>
+</head>
+<body>
+<div class="box">
+    <input type="text"/>
+</div>
+</body>
+</html>

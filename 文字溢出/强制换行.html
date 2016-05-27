@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>词内断句</title>
+    <style>
+        p {
+            width: 200px;
+            border: 1px solid #000;
+            font: 14px/24px Arial;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<p>word-wrap 强调的是是否允许单词内断句，而word-break强调的则是怎么样来进行单词内的断句。</p>
+<p>word-wrap 是用来决定允不允许单词内断句的，如果不允许的话长单词就会溢出。最重要的一点是它还是会首先尝试挪到下一行，看看下一行的宽度够不够，不够的话就进行单词内的断句。而word-break:break-all则更变态，因为它断句的方式非常粗暴，它不会尝试把长单词挪到下一行，而是直接进行单词内的断句。</p>
+<p>The word-wrap property is used to specify whether or not the browser may break lines within words in order to prevent overflow when an otherwise unbreakable string is too long to fit in its containing box.</p>
+<p>Originally a Microsoft (unprefixed) proprietary extension, the word-wrap property has been renamed overflow-wrap in the current draft of the CSS3 Text specification. word-wrap is now considered an "alternate name" for overflow-wrap. Stable builds of Google Chrome and Opera support the new syntax.</p>
+<p>The word-break CSS property is used to specify whether to break lines within words.</p>
+</body>
+</html>

@@ -1,22 +1,91 @@
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
-    <title>背景居中</title>
+    <title>双飞翼布局</title>
     <style type="text/css">
-        #wrap {
-            border: 1px solid blue;
-            width: 700px;
-            height: 400px;
-            line-height: 400px;
-            text-align: center;
-            vertical-align: middle;
-            background: url(win7.jpg) no-repeat center center;
+        /*
+        双飞翼布局：
+        圣杯布局使用了相对定位，以后布局是有局限性的，而且宽度控制要改的地方也多。
+        淘宝 UED 通过多增加一个 div 元素结合浮动和负边距，消除相对定位布局，这就是我们所说的双飞翼布局。
+
+        具体实现：
+        在圣杯布局基础上，去掉了左右栏的相对定位，去掉包裹层 padding ，以中间栏新增 div 的 margin 代替。
+        */
+        body, div， p {
+            padding: 0;
+            margin: 0
+        }
+
+        header, footer {
+            width: 100%;
+            background: #666;
+            height: 30px;
+            clear: both;
+        }
+
+        .content {
+            /*padding-left:150px;*/
+            /*padding-right:190px;*/
+        }
+
+        .left {
+            background: #E79F6D;
+            width: 150px;
+            float: left;
+            margin-left: -100%;
+            /*position: relative;*/
+            /*left:-150px;*/
+        }
+
+        .main {
+            background: #D6D6D6;
+            width: 100%;
+            float: left;
+
+        }
+
+        .right {
+            background: #77BBDD;
+            width: 190px;
+            float: left;
+            margin-left: -190px;
+            /*position:relative;*/
+            /*right:-190px;*/
+        }
+
+        .main-inner {
+            margin-left: 150px;
+            margin-right: 190px;
         }
     </style>
 </head>
 <body>
-<div id="wrap">
-    <h1>文本居中，图片居中</h1>
+<header>Header</header>
+<div class="content">
+    <div class="main">
+        <div class="main-inner">
+            <p>Main</p>
+            <p>Main</p>
+            <p>Main</p>
+            <p>Main</p>
+            <p>Main</p>
+        </div>
+    </div>
+    <div class="left">
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+        <p>Left</p>
+    </div>
+    <div class="right">
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+        <p>Right</p>
+    </div>
 </div>
+<footer>Footer</footer>
 </body>
 </html> 
