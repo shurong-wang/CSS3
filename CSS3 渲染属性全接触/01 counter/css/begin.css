@@ -1,0 +1,93 @@
+/*
+ section编号
+ 	「 新手任务-1 」
+      或「 新手任务之壹 」
+ 图片编号
+ 	图i. 课程出品流程
+ 列表编号
+ 	1：课程进度推进通知
+	2：个人专家签署合同
+	3: 个人专家报酬结算
+	4: 即时沟通
+		4.1: QQ
+		4.2: 微信
+	5: 快递收件地址
+css counters实现，选择位置。
+	1. 定义计数器—— 需计数元素的父元素
+	2. 增数计数器—— 计数元素
+	3. 调用计数器—— 计数元素的伪对象上
+ * */
+
+body {
+    background-color: #eee;
+    color: #666;
+}
+
+h1 {
+    text-align: center;
+}
+
+section {
+    width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+}
+
+section p {
+    line-height: 1.5;
+}
+
+section:before {
+    content: "";
+    font-weight: bold;
+    background-color: #35B558;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 20px;
+}
+
+section h2 {
+    position: relative;
+    top: -20px;
+    left: 168px;
+}
+
+ol {
+    list-style: none;
+    counter-reset: li;
+}
+
+li::before {
+    content: "";
+    font-weight: bold;
+    color: #FF5C00;
+}
+
+figure {
+    padding: 0;
+    margin: 0 20px 20px 0;
+    display: inline-block;
+}
+
+figure img {
+    width: 300px;
+}
+
+figcaption::before {
+    content: "";
+    font-weight: bold;
+    color: #FF5C00;
+    font-size: 110%;
+}
+
+figcaption {
+    margin-top: 10px;
+}

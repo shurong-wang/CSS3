@@ -1,0 +1,10 @@
+.imgContainer{
+	max-width: 1000px;
+	margin: auto;
+}
+.imgContainer h2{
+	font-size: 2vw;
+}
+.imgContainer img{
+	width: 100%;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .box {
+        width: 100px;
+        height: 100px;
+        margin: 50px auto;
+        background-color: #f00;
+        transition: all 1s;
+    }
+
+    .box:hover {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #666;
+        transition: all .3s ease-in .1s;
+        /* transition-property: width, height, border-radius;
+        transition-duration: 1s;
+        transition-timing-function: ease-in;
+        transition-delay: .1s; */
+    }
+</style>
+<body>
+<div class="box"></div>
+</body>
+</html>

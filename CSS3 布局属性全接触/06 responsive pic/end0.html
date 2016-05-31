@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+		<script type="text/javascript" src="js/picturefill.min.js"></script>
+	</head>
+	<body>
+		<div class="imgContainer">
+			<h2>picture source media</h2>
+			<picture>
+				<source media="(max-width:480px)" srcset="img/480x320.gif">
+				<source media="(max-width:640px)" srcset="img/640x427.gif">
+				<source media="(max-width:720px)" srcset="img/720x480.gif">
+				<source media="(max-width:900px)" srcset="img/900x600.gif">
+				<img src="img/900x600.gif" alt="" />
+			</picture>
+		</div>
+	</body>
+</html>

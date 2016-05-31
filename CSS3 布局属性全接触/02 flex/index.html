@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+
+        html {
+            font-size: 12px;
+        }
+
+        .menu {
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .1);
+            display: flex;
+            flex-direction: row;
+        }
+
+        .menu li {
+            list-style-type: none;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            flex: 1 1 100%;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-wrap: wrap;
+            }
+
+            .menu li {
+                flex: 1 1 50%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu {
+                flex-direction: column;
+            }
+
+            .menu li {
+                flex: 1 1 100%;
+            }
+        }
+
+        .menu li:nth-child(1) {
+            background-color: #39ADD1;
+        }
+
+        .menu li:nth-child(2) {
+            background-color: #3079AB;
+        }
+
+        .menu li:nth-child(3) {
+            background-color: #982551;
+        }
+
+        .menu li:nth-child(4) {
+            background-color: #E15258;
+        }
+
+        .menu li:nth-child(5) {
+            background-color: #CC6699;
+        }
+
+        .menu li:nth-child(6) {
+            background-color: #52AC43;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">Javascript</a></li>
+    <li><a href="#">Sass</a></li>
+    <li><a href="#">Ruby</a></li>
+    <li><a href="#">Mongo</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gradient</title>
+</head>
+<style type="text/css">
+    .linear-gradient {
+        width: 1000px;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    .linear-gradient p {
+        width: 100px;
+        height: 100px;
+        float: left;
+        border: 1px #999 solid;
+        line-height: 100px;
+        margin-right: 100px;
+        font-size: 20px;
+    }
+
+    .linear-gradient p:first-child {
+        background: -webkit-linear-gradient(top, #09f, #fff 50%, #0c0);
+    }
+
+    .linear-gradient p:last-child {
+        background: -webkit-linear-gradient(45deg, #09f, #fff, #0c0);
+    }
+</style>
+<body>
+<div class="linear-gradient">
+    <p>普通渐变</p>
+    <p>角度渐变</p>
+</div>
+</body>
+</html>

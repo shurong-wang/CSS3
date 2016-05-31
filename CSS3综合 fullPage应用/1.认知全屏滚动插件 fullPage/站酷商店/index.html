@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>站酷商店</title>
+<link href="style/jquery.fullPage.css" rel="stylesheet" type="text/css">
+<link href="style/web.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+$(function(){
+	$(".con").fullpage({
+		sectionsColor: ['#faca00', '#fbfbfb', '#fdfcf2', 'fffefb', '#f8f7f3'],
+		navigation:true,
+		navigationTooltips:['首页','观止','KIDS','绽放','沉睡的森林',],
+		anchors:['one','two','three','four','five'],
+		menu:"#menu",
+		scrollOverflow:false
+	})	
+	
+})
+
+
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<div class="header">
+	<div class="hd_con">
+		<a href="#" class="logo"></a>
+		<ul id="menu">
+                <li data-menuanchor="one"  class="active"><a href="#one" style="display:none;"></a></li>
+                <li data-menuanchor="two"><a href="#two">吉祥物语</a></li>
+                <li data-menuanchor="three" ><a href="#three">Chow-Lee</a></li>
+                <li data-menuanchor="four" ><a href="#four">北邦</a></li>
+                <li data-menuanchor="five" ><a href="#five">赵娜</a></li>
+         </ul>        
+   </div>
+</div>
+
+<div class="con">
+	<!--第1页-->
+	<section class="section" id="page1">
+    	<div class="bg"></div>
+    </section>
+    
+    <!--第2页-->
+    <section class="section" id="page2" style="overflow:hidden; height:100%;">
+    <div class="inner">
+    	<div class="bg"></div>
+        
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/img1.png">
+                    <p>望<br/>30*40cm / 40*50cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img2.png">
+                    <p>听<br/>30*40cm / 40*50cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img3.png">
+                    <p>悟<br/>30*40cm / 40*50cm</p>
+                    <a href="#"></a>                    
+                </li>
+            </ul>
+        </div>
+        
+        <div class="right">
+        	<h1>观止</h1>
+            价格：99元起<br/>
+            艺术家：吉祥物语<br/>
+            <a href="#">站酷主页</a>
+        </div>
+        </div>    
+    </section>
+    
+    
+    
+    <!--第3页-->
+    <section class="section" id="page3">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/img4.png">
+                    <p>Love<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img5.png">
+                    <p>Filial and eros aw<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img6.png">
+                    <p>Good Time<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>KIDS</h1>
+            价格：249元<br/>
+            艺术家：Chow-Lee<br/>
+            <a href="#">站酷主页</a>
+        </div>
+    </section>
+    
+    
+    <!--第4页-->
+    <section class="section" id="page4">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/img7.png">
+                    <p>绽放2009<br/>60*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img8.png">
+                    <p>绽放2010<br/>60*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img9.png">
+                    <p>绽放2011<br/>60*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>绽放</h1>
+            价格：269元<br/>
+            艺术家：北邦<br/>
+            <a href="#">站酷主页</a>
+        </div>
+    </section>
+    
+    
+    <!--第5页-->
+    <section class="section" id="page5">
+    	<div class="bg"></div>
+        <div class="left">
+        	<ul>
+            	<li>
+                	<img src="images/img10.png">
+                    <p>栖息<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img11.png">
+                    <p>惊蛰<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+                <li>
+                	<img src="images/img12.png">
+                    <p>恬静<br/>50*60cm</p>
+                    <a href="#"></a>                    
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+        	<h1>沉睡的森林</h1>
+            价格：249元<br/>
+            艺术家：赵娜<br/>
+            <a href="#">站酷主页</a>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>
