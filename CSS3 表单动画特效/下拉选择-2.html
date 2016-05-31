@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<style type="text/css">
+	body, p, ul{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background-color: #0c9;
+		color: #333;
+	}
+	.content{
+		padding-top:20%;
+	}
+	.content .select{
+		width: 300px;
+		height: 40px;
+		margin:0 auto;
+		font-family: "Microsoft Yahei";
+		font-size: 16px;
+		background-color: #fff;
+		position: relative;
+	}
+	.content .select > i{
+		position: absolute;
+		top: 12px;
+		right: 10px;
+		width: 20px;
+		height: 11px;
+		border-top: 3px #ccc solid;
+		border-bottom: 3px #ccc solid;
+	}
+	.content .select > i:after{
+		content: '';
+		position: absolute;
+		top: 4px;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #ccc;
+	}
+	.content .select p{
+		padding:0 15px;
+		line-height: 40px;
+		cursor: pointer;
+	}
+	.content .select ul{
+		list-style-type: none;
+		position: absolute;
+		top: 20px;
+		left: 0;
+		z-index: 1;
+		background-color: #fff;
+		width: 100%;
+		overflow: hidden;
+		height: 0;
+		transition:height .3s ease-out, top .3s ease-out;
+	}
+	.content .select ul li{
+		padding:0 15px;
+		line-height: 40px;
+		cursor: pointer;
+		opacity: 0;
+		transform:translateX(300px);
+		transition:transform .3s ease-out;
+	}
+	.content .select ul li:hover{
+		background-color: #e0e0e0;
+	}
+	.content .select ul li.selected{
+		color: #0c9;
+	}
+
+	.content .select.open ul{
+		height: 200px;
+		top: -80px;
+		transition:all .2s ease-in;
+	}
+	.content .select.open ul li{
+		opacity: 1;
+		transform:translateX(0);
+	}
+	.content .select.open ul li:nth-child(1){
+		transition:opacity .3s ease-in .05s, transform .3s ease-in .05s;
+	}
+	.content .select.open ul li:nth-child(2){
+		transition:opacity .3s ease-in .1s, transform .3s ease-in .1s;
+	}
+	.content .select.open ul li:nth-child(3){
+		transition:opacity .3s ease-in .15s, transform .3s ease-in .15s;
+	}
+	.content .select.open ul li:nth-child(4){
+		transition:opacity .3s ease-in .2s, transform .3s ease-in .2s;
+	}
+	.content .select.open ul li:nth-child(5){
+		transition:opacity .3s ease-in .25s, transform .3s ease-in .25s;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$('.select > p').on('click', function(e){
+			$('.select').toggleClass('open');
+			e.stopPropagation();
+		});
+		$('.select > ul li').on('click', function(e){
+			var _this = $(this);
+			$('.select > p').text(_this.attr('data-value'));
+			_this.addClass('selected').siblings().removeClass('selected');
+			$('.select').removeClass('open');
+			e.stopPropagation();
+		});
+		$(document).on('click', function(){
+			$('.select').removeClass('open');
+		});
+	});
+</script>
+<body>
+	<div class="content">
+		<div class="select">
+			<p>所有选项</p>
+			<i></i>
+			<ul>
+				<li data-value="所有选项" class="selected">所有选项</li>
+				<li data-value="html">html</li>
+				<li data-value="css">css</li>
+				<li data-value="javascript">javascript</li>
+				<li data-value="jQuery">jQuery</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

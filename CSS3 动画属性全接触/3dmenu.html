@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .nav {
+        width: 980px;
+        margin: 50px auto;
+        background-color: #fdfdfd;
+        border: 1px #ccc solid;
+    }
+
+    .nav:after {
+        clear: both;
+        display: block;
+        overflow: hidden;
+        content: "";
+    }
+
+    .nav .item {
+        width: 200px;
+        height: 100px;
+        margin-right: 5px;
+        float: left;
+        perspective: 4000px;
+    }
+
+    .nav .item a {
+        display: block;
+        height: 100px;
+        text-decoration: none;
+        transition: all .5s;
+        transform-style: preserve-3d;
+    }
+
+    .nav .item a p {
+        height: 100px;
+        margin: 0;
+        line-height: 100px;
+        color: #fff;
+        text-align: center;
+        font-size: 20px;
+        font-family: "Microsoft Yahei";
+        border-radius: 2px;
+        transition: all .5s;
+    }
+
+    .nav .item a p:first-child {
+        background-color: #090;
+        transform: translateZ(50px);
+    }
+
+    .nav .item a p:last-child {
+        background-color: #009;
+        transform: translateZ(50px) rotateX(-90deg);
+        margin-top: -50px;
+    }
+
+    .nav .item a:hover {
+        transform: rotateX(90deg);
+    }
+
+    .nav .item a:hover p:last-child {
+        margin-top: 0;
+        transform: translateZ(0) rotateX(-90deg);
+    }
+</style>
+<body>
+<header class="nav">
+    <div class="item">
+        <a href="#">
+            <p>首页</p>
+            <p>Home</p>
+        </a>
+    </div>
+
+    <div class="item">
+        <a href="#">
+            <p>问答</p>
+            <p>Q &amp; A</p>
+        </a>
+    </div>
+
+    <div class="item">
+        <a href="#">
+            <p>关于我们</p>
+            <p>About us</p>
+        </a>
+    </div>
+</header>
+</body>
+</html>
