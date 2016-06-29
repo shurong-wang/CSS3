@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <title></title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      border: none;
+    }
+
+    html {
+      font-size: 12px;
+    }
+
+    .menu {
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, .1);
+      display: flex; /* 弹性容器 */
+
+      /* width > 768px */
+      flex-direction: row; /* 主轴为水平方向，从右到左排列 */
+    }
+
+    .menu li {
+      list-style-type: none;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+
+      /* width > 768px */
+      flex: 1 1 100%; /* flex-grow, flex-shrink, flex-basis */
+    }
+
+    /* width > 480px && width <= 768px */
+    @media (max-width: 768px) {
+      .menu {
+        flex-wrap: wrap; /* 溢出时自动换行 */
+      }
+
+      .menu li {
+        flex-basis: 50%; /* 指定弹性子元素伸缩前的默认大小值，相当于 width 和 height 属性 */
+      }
+    }
+
+    /* width <= 480px */
+    @media (max-width: 480px) {
+      .menu {
+        flex-direction: column; /* 主轴为垂直方向，从上到下排列 */
+      }
+
+      .menu li {
+        flex-basis: 100%; /* 指定弹性子元素伸缩前的默认大小值，相当于 width 和 height 属性 */
+      }
+    }
+
+    .menu li:nth-child(1) {
+      background-color: #39ADD1;
+    }
+
+    .menu li:nth-child(2) {
+      background-color: #3079AB;
+    }
+
+    .menu li:nth-child(3) {
+      background-color: #982551;
+    }
+
+    .menu li:nth-child(4) {
+      background-color: #E15258;
+    }
+
+    .menu li:nth-child(5) {
+      background-color: #CC6699;
+    }
+
+    .menu li:nth-child(6) {
+      background-color: #52AC43;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+<ul class="menu">
+  <li><a href="#">HTML5</a></li>
+  <li><a href="#">CSS3</a></li>
+  <li><a href="#">ES2015</a></li>
+  <li><a href="#">Node.js</a></li>
+  <li><a href="#">Babel</a></li>
+  <li><a href="#">Sass</a></li>
+</ul>
+</body>
+</html>

@@ -4,74 +4,90 @@
  深灰  #666666
  浅灰  #F8F8F8
  * */
-h1{
-	font-size: 30px;
-	text-align: center;
-	color: #666;
+h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #666;
 }
-table.responsive{
-	width:98%;
-	margin: 0 auto;
-	color: #000;
-	border-collapse: collapse;
-	border: 1px solid #666666;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+table.responsive {
+    width: 98%;
+    margin: 0 auto;
+    color: #000;
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
-table.responsive td,table.responsive th{
-	border: 1px solid #666666;
-	padding: .5em 1em;
+
+table.responsive td, table.responsive th {
+    border: 1px solid #666666;
+    padding: .5em 1em;
 }
+
 table.responsive th {
     background: #35B558;
     height: 24px;
     line-height: 24px;
 }
-table.responsive .actions a{
-	color: #ff5c00;
-	padding: 0 2px;
-	text-decoration: none;
+
+table.responsive .actions a {
+    color: #ff5c00;
+    padding: 0 2px;
+    text-decoration: none;
 }
-table.responsive .number,table.responsive .actions{
-	text-align: center;
+
+table.responsive .number, table.responsive .actions {
+    text-align: center;
 }
-@media (max-width:480px){
-	table.responsive{
-		box-shadow: none;
-		border: none;
-	}
-	table.responsive thead {
-    	display: none;
-	}
-	table.responsive tr, table.responsive td {
+
+/* width <= 480px */
+@media (max-width: 480px) {
+    table.responsive {
+        box-shadow: none;
+        border: none;
+    }
+
+    table.responsive thead {
+        display: none;
+    }
+
+    table.responsive tr, table.responsive td {
         display: block;
     }
+
     table.responsive td:nth-child(1), table.responsive td:nth-child(2) {
         padding-left: 25%;
     }
-	table.responsive td:nth-child(1)::before {
-        content:'课程序号';
+
+    table.responsive td:nth-child(1)::before {
+        content: '课程序号';
         position: absolute;
         left: .5em;
         font-weight: bold;
     }
+
     table.responsive td:nth-child(2)::before {
-        content:'课程名称';
+        content: '课程名称';
         position: absolute;
         left: .5em;
         font-weight: bold;
     }
+
     table.responsive tr {
         position: relative;
         margin-bottom: 1em;
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
     }
+
     table.responsive td {
         border: none;
     }
+
     table.responsive .number {
         background: #35B558;
         text-align: left;
     }
+
     table.responsive td.actions {
         position: absolute;
         top: 0;
