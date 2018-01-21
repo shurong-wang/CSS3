@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
 <style type="text/css">
-	.radio-1{
+	.radio-1 {
 		width: 980px;
-		margin:0 auto;
-		padding:3% 0;
+		margin: 0 auto;
+		padding: 3% 0;
 		background-color: #3cc;
 		text-align: center;
 	}
-	.radio-1 [type="radio"]{
-		 display: none; 
+
+	.radio-1 [type="radio"] {
+		display: none;
 	}
-	.radio-1 label{
+
+	.radio-1 label {
 		display: inline-block;
 		position: relative;
 		width: 28px;
@@ -26,7 +29,13 @@
 		cursor: pointer;
 		border-radius: 100%;
 	}
-	.radio-1 label:after{
+
+	.radio-1 [type="radio"]:checked+label {
+		background-color: #eee;
+		transition: background-color .2s ease-in;
+	}
+
+	.radio-1 label:after {
 		content: '';
 		position: absolute;
 		top: 4px;
@@ -36,40 +45,40 @@
 		background-color: #666;
 		border-radius: 50%;
 		transform: scale(0);
-		transition:transform .2s ease-out;
-	}
-	.radio-1 [type="radio"]:checked + label{
-		background-color: #eee;
-		transition:background-color .2s ease-in;
-	}
-	.radio-1 [type="radio"]:checked + label:after{
-		transform:scale(1);
-		transition:transform .2s ease-in;
+		transition: transform .2s ease-out;
 	}
 
-	.radio-2{
+	.radio-1 [type="radio"]:checked+label:after {
+		transform: scale(1);
+		transition: transform .2s ease-in;
+	}
+
+	.radio-2 {
 		width: 980px;
-		margin:0 auto;
-		padding:3% 0;
+		margin: 0 auto;
+		padding: 3% 0;
 		background-color: #fc9;
 		text-align: center;
 	}
-	.radio-2 [type="radio"]{
+
+	.radio-2 [type="radio"] {
 		display: none;
 	}
-	.radio-2 label{
+
+	.radio-2 label {
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
 		width: 28px;
 		height: 28px;
-		border:1px #ccc solid;
+		border: 1px #ccc solid;
 		border-radius: 100%;
 		background-color: #fff;
 		margin-right: 10px;
 		cursor: pointer;
 	}
-	.radio-2 label:after{
+
+	.radio-2 label:after {
 		content: '';
 		position: absolute;
 		top: 4px;
@@ -78,15 +87,17 @@
 		height: 20px;
 		border-radius: 50%;
 		background-color: #666;
-		transform-origin:-2px 50%;
-		transform:rotate(-180deg);
-		transition:transform .2s ease-out;
+		transform-origin: -2px 50%;
+		transform: rotate(-180deg);
+		transition: transform .2s ease-out;
 	}
-	.radio-2 [type="radio"]:checked + label:after{
-		transform:rotate(0deg);
-		transition:transform .2s ease-in;
+
+	.radio-2 [type="radio"]:checked+label:after {
+		transform: rotate(0deg);
+		transition: transform .2s ease-in;
 	}
 </style>
+
 <body>
 	<div class="radio-1">
 		<input type="radio" name="radio-1" id="radio-1-1" checked="checked" />
@@ -110,4 +121,5 @@
 		<label for="radio-2-3"></label>
 	</div>
 </body>
+
 </html>

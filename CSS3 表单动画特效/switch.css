@@ -1,0 +1,135 @@
+ body {
+     font-family: 'Source Sans Pro', Helvetica Neue, Helvetica, Arial, sans-serifsans !important;
+ }
+
+ .container {
+     position: absolute;
+     left: 0;
+     right: 0;
+     top: 120px;
+     text-align: center;
+     margin: auto;
+ }
+
+ .switch {
+     position: relative;
+     outline: 0;
+     display: inline-block;
+     cursor: pointer;
+     user-select: none;
+     margin: 0 0 5px 0;
+     font-size: 30px;
+ }
+
+ .switch,
+ .switch:after,
+ .switch:before,
+ .switch *,
+ .switch *:after,
+ .switch *:before,
+ .switch+.switch-btn {
+     box-sizing: border-box;
+ }
+
+ .switch::selection,
+ .switch:after::selection,
+ .switch:before::selection,
+ .switch *::selection,
+ .switch *:after::selection,
+ .switch *:before::selection,
+ .switch+.switch-btn::selection {
+     background: none;
+ }
+
+ .switch span {
+     position: relative;
+     display: block;
+     height: 1.8em;
+     line-height: 1.2em;
+     overflow: hidden;
+     font-weight: normal;
+     text-align: center;
+     border-radius: 2em;
+     padding: 0.2em 1em;
+     border: 1px solid #fafafa;
+     box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(255, 255, 255, 0.7);
+     transition: color 0.3s ease, padding 0.3s ease-in-out, background 0.3s ease-in-out;
+ }
+
+ .switch span:before {
+     position: relative;
+     display: block;
+     line-height: 1.3em;
+     padding: 0 0.2em;
+     font-size: 1em;
+ }
+
+ .switch span:after {
+     position: absolute;
+     display: block;
+     content: '';
+     border-radius: 2em;
+     width: 1.3em;
+     height: 1.3em;
+     margin-left: -1.45em;
+     top: 0.2em;
+     background: #fff;
+     transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 0.97), background 0.3s ease-in-out;
+ }
+
+ .switch input[type="checkbox"] {
+     display: none !important;
+ }
+
+ .switch input[type="checkbox"]:checked+span {
+     background: #86d993;
+     color: #fff;
+     padding-left: 0.4em;
+     padding-right: 1.6em;
+ }
+
+ .switch input[type="checkbox"]:checked+span:before {
+     content: attr(data-on);
+ }
+
+ .switch input[type="checkbox"]:checked+span:after {
+     background: #fff;
+     left: 100%;
+ }
+
+ .switch input[type="checkbox"]:not(:checked)+span {
+     background: #de474e;
+     color: #fff;
+     padding-left: 1.6em;
+     padding-right: 0.4em;
+ }
+
+ .switch input[type="checkbox"]:not(:checked)+span:before {
+     content: attr(data-off);
+     color: #fff;
+ }
+
+ .switch input[type="checkbox"]:not(:checked)+span:after {
+     background: #fff;
+     left: 1.6em;
+ }
+
+ .switch-gray input[type="checkbox"]:not(:checked)+span {
+     background: #e3e3e3;
+     color: #999999;
+ }
+
+ .switch-gray input[type="checkbox"]:not(:checked)+span:before {
+     color: #999999;
+ }
+
+ .switch-gray input[type="checkbox"]:not(:checked)+span:after {
+     background: #fff;
+ }
+
+ .switch input[type="checkbox"]:disabled,
+ .switch input[type="checkbox"]:disabled+span,
+ .switch input[type="checkbox"]:read-only,
+ .switch input[type="checkbox"]:read-only+span {
+     cursor: not-allowed;
+ }
