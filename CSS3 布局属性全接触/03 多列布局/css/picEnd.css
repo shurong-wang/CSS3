@@ -1,5 +1,7 @@
 * {
-    box-sizing: border-box; /* border 和 padding 计算入 width 之内，相当于怪异模式 */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -15,22 +17,21 @@ h1 {
     left: 0;
 }
 
-.picC {
-    width: 98%;
+ul.picC {
+    width: 90%;
     margin: 10px auto;
-    -webkit-column-count: 3;
     column-count: 3; /* 设置列数 */
-    -webkit-column-gap: 22px;
     column-gap: 22px;  /* 设置列之间的间隙 */
+    overflow-x: hidden;
 }
 
-.picC li {
+ul.picC li {
     list-style-type: none;
     margin-top: 10px;
 }
 
 .pic li img {
-    width: 100%;
+    width: 33%;
     /*height: auto;*/
 }
 
